@@ -3,31 +3,47 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="font-weight-bold mb-3">Product List</h2>
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr class="text-center">
-                                <th>No</th>
-                                <th>Name</th>
-                                <th width="20%">Image</th>
-                                <th>Description</th>
-                                <th>Stock</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($products as $index=>$product)                                
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $product->name }}</td>
-                                <td><img src="{{ asset('storage/images/'.$product->url) }}" alt="product image" class="img-fluid"></td>
-                                <td>{{ $product->description }}</td>
-                                <td class="text-center">{{ $product->stock }}</td>
-                                <td>{{ number_format($product->price) }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="font-weight-bold mb-3">Product List</h2>
+                        </div>
+                        <div class="col-md-4">
+                            <input wire:model="search" type="text" class="form-control" placeholder="Search product">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-hover">
+                            <thead class="table-success">
+                                <tr class="text-center">
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th width="20%">Image</th>
+                                    <th>Description</th>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($products as $index=>$product)                                
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $product->name }}</td>
+                                    <td><img src="{{ asset('storage/images/'.$product->url) }}" alt="product image" class="img-fluid"></td>
+                                    <td>{{ $product->description }}</td>
+                                    <td class="text-center">{{ $product->stock }}</td>
+                                    <td>{{ number_format($product->price) }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="mt-4" style="display:flex; justify-content:center;">
+                                {{ $products->links() }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

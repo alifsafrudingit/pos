@@ -6,9 +6,6 @@
                     <div class="col-md-8">
                         <h4 class="font-weight-bold">Users</h4>
                     </div>
-                    <div class="col-md-4">
-                        <input wire:model="search" type="text" class="form-control" placeholder="Search invoice number">
-                    </div>
                 </div>
                 <div class="row">
                     <table class="table table-hover">
