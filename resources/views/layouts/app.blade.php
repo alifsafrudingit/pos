@@ -92,9 +92,10 @@
             </div>
         </main>
     </div>
-    @livewireScripts
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
-    @stack('script-custom')
+    @livewireScripts
     @livewireChartsScripts
+    @stack('script-custom')
 </body>
 </html>
