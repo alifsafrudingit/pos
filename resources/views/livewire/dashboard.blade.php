@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 mt-4">
+                <div class="col-md-12 mt-4">
                         <div class="card-body">
-                            <h3>Chart</h3>
+                            <h3>Sale Chart</h3>
                             <div style="height: 32rem;">
                                 <livewire:livewire-column-chart key="{{ $columnChartModel->reactiveKey() }}" :column-chart-model="$columnChartModel"/>
                             </div>

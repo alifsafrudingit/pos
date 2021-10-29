@@ -28,7 +28,7 @@
                     </div>
                     @endforelse
                 </div>
-                <div class="mt-4" style="display:flex; justify-content:right;">
+                <div class="mt-4" style="display:flex; justify-content:center;">
                     {{ $products->links() }}
                 </div>
             </div>

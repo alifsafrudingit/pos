@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use DB;
+use Faker\Factory;
 use App\Models\User;
 use App\Models\Product;
 use Livewire\Component;
@@ -14,6 +15,8 @@ class Dashboard extends Component
 {
     public function render()
     {
+        $faker = Factory::create();
+
         $count_transaction = Transaction::count();
         $count_product_available = Product::where('stock', '>', '0')->count();
         $count_product_not_available = Product::where('stock', '=', '0')->count();
@@ -27,8 +30,15 @@ class Dashboard extends Component
 
         $columnChartModel = (new ColumnChartModel());
         foreach ($data_month as $key => $item) {
-            $columnChartModel->addColumn($key+1, $item, '#90cdf4');
+            $columnChartModel->addColumn($key+1, $item, $faker->hexColor());
         }
+
+        $columnChartModel
+            ->withoutLegend()
+            ->setTitle('Number of Products Sold')
+            ->withDataLabels()
+            ->setAnimated(true)
+            ;
 
         return view('livewire.dashboard', compact('count_transaction', 'count_product_available', 'count_product_not_available','count_user', 'columnChartModel'));
     }

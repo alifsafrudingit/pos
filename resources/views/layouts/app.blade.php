@@ -40,6 +40,12 @@
                         <a class="nav-link" href="{{ url('/cart') }}">
                             Cashier
                         </a>
+                        <a class="nav-link" href="{{ url('/transactions') }}">
+                            Transactions
+                        </a>
+                        <a class="nav-link" href="{{ url('/users') }}">
+                            User
+                        </a>
                     </div>
                 </div>
                 @endauth

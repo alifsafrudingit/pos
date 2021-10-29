@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="font-weight-bold mb-3">Product List</h2>
-                    <table class="table table-bordered table-hovered">
+                    <table class="table table-bordered table-hover">
                         <thead>
                             <tr class="text-center">
                                 <th>No</th>

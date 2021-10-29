@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Livewire\Cart;
+use App\Http\Livewire\User;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Logout;
+use App\Http\Livewire\Transaction;
 use App\Http\Livewire\Auth\Register;
 use Illuminate\Support\Facades\Route;
 
@@ -32,5 +34,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', Dashboard::class)->name('home');
     Route::get('/products', Product::class);
     Route::get('/cart', Cart::class);
+    Route::get('/transactions', Transaction::class);
+    Route::get('/users', User::class);
     Route::get('/logout', Logout::class)->name('logout');
 });
